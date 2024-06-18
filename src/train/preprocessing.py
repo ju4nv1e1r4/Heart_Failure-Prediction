@@ -15,6 +15,8 @@ from sklearn.decomposition import KernelPCA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.model_selection import KFold, cross_val_score
 
@@ -177,3 +179,85 @@ model = GaussianNB()
 result = cross_val_score(model, pred3esc, target, cv = kfold)
 
 result.mean()
+
+# %%
+svm = SVC(kernel='rbf', random_state=1, C=2)
+svm.fit(X_train, y_train)
+
+# %%
+pred_svm = svm.predict(X_test)
+pred_svm
+
+# %%
+accuracy_score(y_test, pred_svm)
+
+# %%
+confusion_matrix(y_test, pred_svm)
+
+# %%
+print(classification_report(y_test, pred_svm))
+
+# %%
+pred_train_svm = svm.predict(X_train)
+pred_train_svm
+
+# %%
+accuracy_score(y_train, pred_train_svm)
+
+# %%
+confusion_matrix(y_train, pred_train_svm)
+
+# %%
+kfold_svm = KFold(n_splits = 30, shuffle=True, random_state=5)
+
+# %%
+model_svm = SVC(kernel='rbf', random_state=1, C=2)
+result_svm = cross_val_score(model_svm, pred3esc, target, cv = kfold_svm)
+
+result_svm.mean()
+
+# %%
+logreg = LogisticRegression(random_state=1,
+                            max_iter=600,
+                            penalty='l2',
+                            tol=0.0001,C=1,
+                            solver='lbfgs')
+logreg.fit(X_train, y_train)
+
+# %%
+pred_logreg = logreg.predict(X_test)
+pred_logreg
+
+# %%
+accuracy_score(y_test, pred_logreg)
+
+# %%
+confusion_matrix(y_test, pred_logreg)
+
+# %%
+print(classification_report(y_test, pred_logreg))
+
+# %%
+pred_train_logreg = logreg.predict(X_train)
+pred_train_logreg
+
+# %%
+accuracy_score(y_train, pred_train_logreg)
+
+# %%
+confusion_matrix(y_train, pred_train_logreg)
+
+# %%
+kfold_logreg = KFold(n_splits = 30, shuffle=True, random_state=5)
+
+# %%
+model_logreg = LogisticRegression(random_state=1,
+                                max_iter=600,
+                                penalty='l2',
+                                tol=0.0001,C=1,
+                                solver='lbfgs')
+result_logreg = cross_val_score(model_logreg, pred3esc, target, cv = kfold_logreg)
+
+result_logreg.mean()
+
+# %%
