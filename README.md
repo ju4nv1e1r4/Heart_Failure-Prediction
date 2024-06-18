@@ -18,11 +18,17 @@ Este projeto visa desenvolver um algoritmo de Machine Learning para prever a ten
 4. **Treinamento do Modelo**
    - Utilizando o `train.py`, o modelo foi treinado com os dados preparados na etapa anterior. Foi aplicada validação cruzada para avaliar a performance do modelo e otimizar os parâmetros.
 
-5. **Teste do Modelo** (etapa atual)
+5. **Teste do Modelo**
    - Após o treinamento, o modelo foi testado utilizando o conjunto de teste separado. Métricas de avaliação foram calculadas para verificar a precisão e eficácia do modelo.
 
-6. **Previsão**
-   - Ainda será feita.
+6. **Previsão** (etapa atual)
+      - Com todo o pré-processamento dos dados, no qual se refere ao modelo `heart6.pkl`, seguem abaixo a acurácia de cada algoritmo. Ainda pretendo testar com outros.
+
+      - `Naive Bayes`: Acc-Test=84,78%; Acc-Train=86,12%;   Cross-Val=85,17%
+
+      - `SVM`: Acc-Test=86,26%; Acc-Train=92,82%; Cross-Val=85,72%
+
+      - `LogReg`: Acc-Test=86,23%; Acc-Train=85,80%; Cross-Val=85,83%
 
 ## Arquivos
 
@@ -30,6 +36,11 @@ Este projeto visa desenvolver um algoritmo de Machine Learning para prever a ten
 - `cleaning.ipynb`: Notebook utilizado para a limpeza e tratamento inicial dos dados, utilizando Pandas e NumPy.
 - `train.py`: Script Python utilizado para o pré-processamento, treinamento, avaliação e validação cruzada do modelo de Machine Learning. Utilizou-se Scikit-learn, Pandas e Pickle para serialização do modelo.
 - Pasta `data`: Contém os arquivos de dados utilizados no projeto.
+
+## Tecnologias Utilizadas
+1. Python 3.12.3
+2. Jupyter Notebook
+3. Algoritmos Naive Bayes, SVM, LogReg
 
 ## Contribuição
 

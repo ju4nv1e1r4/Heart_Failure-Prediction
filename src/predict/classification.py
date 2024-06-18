@@ -114,17 +114,17 @@ predictors_lda.shape
 lda.explained_variance_ratio_
 
 # %%
-arq = open('heart.pkl', 'wb')
+arq = open('../../data/pkl/heart1.pkl', 'wb')
 pickle.dump(target, arq)
-arq2 = open('heart2.pkl', 'wb')
+arq2 = open('../../data/pkl/heart2.pkl', 'wb')
 pickle.dump(pred, arq2)
-arq3 = open('heart3.pkl', 'wb')
+arq3 = open('../../data/pkl/heart3.pkl', 'wb')
 pickle.dump(pred_esc, arq3)
-arq4 = open('heart4.pkl', 'wb')
+arq4 = open('../../data/pkl/heart4.pkl', 'wb')
 pickle.dump(pred2, arq4)
-arq5 = open('heart5.pkl', 'wb')
+arq5 = open('../../data/pkl/heart5.pkl', 'wb')
 pickle.dump(pred3, arq5)
-arq6 = open('heart6.pkl', 'wb')
+arq6 = open('../../data/pkl/heart6.pkl', 'wb')
 pickle.dump(pred3esc, arq6)
 
 # %%
@@ -162,23 +162,23 @@ confusion_matrix(y_test, pred_naive)
 print(classification_report(y_test, pred_naive))
 
 # %%
-pred_train = naive.predict(X_train)
-pred_train
+pred_train_naive = naive.predict(X_train)
+pred_train_naive
 
 # %%
-accuracy_score(y_train, pred_train)
+accuracy_score(y_train, pred_train_naive)
 
 # %%
-confusion_matrix(y_train, pred_train)
+confusion_matrix(y_train, pred_train_naive)
 
 # %%
 kfold = KFold(n_splits = 30, shuffle=True, random_state=5)
 
 # %%
-model = GaussianNB()
-result = cross_val_score(model, pred3esc, target, cv = kfold)
+model_naive = GaussianNB()
+result_naive = cross_val_score(model_naive, pred3esc, target, cv = kfold)
 
-result.mean()
+result_naive.mean()
 
 # %%
 svm = SVC(kernel='rbf', random_state=1, C=2)
@@ -259,5 +259,3 @@ model_logreg = LogisticRegression(random_state=1,
 result_logreg = cross_val_score(model_logreg, pred3esc, target, cv = kfold_logreg)
 
 result_logreg.mean()
-
-# %%
