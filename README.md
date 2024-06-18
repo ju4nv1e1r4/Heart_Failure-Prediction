@@ -2,6 +2,8 @@
 
 Este projeto visa desenvolver um algoritmo de Machine Learning para prever a tendência de uma pessoa desenvolver algum tipo de doença cardíaca com base em fatores clínicos e laboratoriais. Utilizou-se um dataset disponível no Kaggle, acessível através do link [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction).
 
+![alt text](2.png)
+
 ## Etapas do Projeto
 
 1. **Análise Exploratória de Dados (EDA)**
