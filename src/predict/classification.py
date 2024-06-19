@@ -90,30 +90,6 @@ pred3esc = StandardScaler().fit_transform(pred3)
 pred3esc
 
 # %%
-pca = PCA(n_components=4)
-predictors_pca = pca.fit_transform(pred2)
-
-predictors_pca.shape
-
-# %%
-pca.explained_variance_ratio_
-
-# %%
-kpca = KernelPCA(n_components=4, kernel='rbf')
-predictors_kernel = kpca.fit_transform(pred2)
-
-predictors_kernel.shape
-
-# %%
-lda = LinearDiscriminantAnalysis(n_components=1)
-predictors_lda = lda.fit_transform(pred2, target)
-
-predictors_lda.shape
-
-# %%
-lda.explained_variance_ratio_
-
-# %%
 arq = open('../../data/pkl/heart1.pkl', 'wb')
 pickle.dump(target, arq)
 arq2 = open('../../data/pkl/heart2.pkl', 'wb')
