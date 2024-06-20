@@ -25,10 +25,14 @@ Este projeto visa desenvolver um algoritmo de Machine Learning para prever a ten
       - Com todo o pré-processamento dos dados, no qual se refere ao modelo `heart6.pkl`, seguem abaixo a acurácia de cada algoritmo. Ainda pretendo testar com outros.
 
       - `Naive Bayes`: Acc-Test=84,78%; Acc-Train=86,12%;   Cross-Val=85,17%
+      ![alt text](data/Learning_Curve_NaiveBayes(GaussianNB).png)
 
       - `SVM`: Acc-Test=86,26%; Acc-Train=92,82%; Cross-Val=85,72%
+      ![alt text](data/Learning_Curve_SVM.png)
 
       - `LogReg`: Acc-Test=86,23%; Acc-Train=85,80%; Cross-Val=85,83%
+      ![alt text](data/Learning_Curve_LogReg.png)
+
 
 ## Arquivos
 
